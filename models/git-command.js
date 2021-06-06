@@ -15,6 +15,11 @@ class GitCommand {
             For assignment #1:
             Create logic here and run unit testing.
         */
+        const new_changes = this.working_directory.new_changes;
+        let result = `You have ${(Object.keys(new_changes)).length} change/s.`;
+        for(const key of Object.keys(new_changes))
+            result += `\n${key}`;
+        return result;
     }
 
     //Command: git add <filename/file directory/wildcard> 
